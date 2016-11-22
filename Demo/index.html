@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Flash图片批量上传</title>
+</head>
+<body>
+    <div id="content"></div>
+</body>
+</html>
+<script src="swfobject.js"></script>
+<script>
+    window.onload = function () {
+        var params = {
+            uploadServerUrl: "upload.aspx",
+            jsFunction: "CallBack",
+            filter: "*.jpg;*.gif;*.png"
+        }
+        swfobject.embedSWF("uploadImage.swf", "content", "1000", "300", "10.0.0", "expressInstall.swf", params);
+    }
+
+    function CallBack() {
+        alert('上传成功！');
+    }
+</script>
